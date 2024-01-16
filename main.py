@@ -159,7 +159,7 @@ async def oplata(callback: CallbackQuery, state: FSMContext):
         bought = data[0][0]
         labels = [data[0][1], data[0][2]]
         # Сначало идет месяц
-        days = [3, 2]
+        days = [30, 7]
         last_day = data[0][3]
         for i in range(len(labels)):
             if bought == 1 and last_day:
@@ -188,7 +188,7 @@ async def oplata(callback: CallbackQuery, state: FSMContext):
             data = await db.get_payment_status(callback.message.chat.id)
         bought = data[0][0]
         labels = [data[0][1], data[0][2]]
-        days = [3, 2]
+        days = [30, 7]
         if bought == 0:
             client = Client(token)
             for i in range(len(labels)):
